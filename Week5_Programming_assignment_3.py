@@ -10,16 +10,16 @@ def final(n, moves):
     """
     n=int(n)
     moves=str(moves)
-    x_coordinate=1
-    y_coordinate=1
+    x=1
+    y=1
     
     for move in range(len(moves)):
-        if moves[move]=="N" and y_coordinate<n:
-            y_coordinate=y_coordinate+1
-        elif moves[move]=="E" and x_coordinate<n:
-            x_coordinate=x_coordinate+1
-        elif moves[move]=="W" and x_coordinate>1:
-            x_coordinate=x_coordinate-1
-        elif moves[move]=="S" and y_coordinate>1:
-            y_coordinate=y_coordinate-1
-    return (x_coordinate,y_coordinate)
+        if moves[move]=="N" and y<n:
+            y=y+1
+        elif moves[move]=="E" and x<n:
+            x=x+1
+        elif moves[move]=="W" and x>1:
+            x=x-1
+        elif moves[move]=="S" and y>1:
+            y=y-1
+    return (x,y)
