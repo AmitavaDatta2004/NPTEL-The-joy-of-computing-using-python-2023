@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming in Java 2024</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-y6DqI58rv5cYdJXaevdssKbkqEEN+45wnC2DQj5BE6ZI6p/9N4QYyus86ZlqBpSUz5VHPMt8m9WCP6lOqsAPlg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+
+
+<!-- w2a1 c1-->
+    <div class="code-container">
+        <h2>Week 2: Assignment 1</h2>
+        <pre id="code1">
+M = int(input())
+N = int(input())
+
+if M < N:
+    print(M, end="")
+else:
+  while M >= N:
+        M = M - N
+  print(M , end="")
+</pre>
+        <button onclick="copyCode('code1')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+<!-- w2a2 c2-->
+    <div class="code-container">
+        <h2>Week 2: Assignment 2</h2>
+        <pre id="code2">
+a = int(input())
+b = int(input())
+c = int(input())
+
+if a**2 + b**2 == c**2 or b**2 + c**2 == a**2 or c**2 + a**2 == b**2:
+  print("YES" , end="")
+else:
+  print("NO" , end="")
+</pre>
+        <button onclick="copyCode('code2')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+<!-- w2a3 c3-->
+    <div class="code-container">
+        <h2>Week 2: Assignment 3</h2>
+        <pre id="code3">
+def is_valid_password(password):
+    if not (8 <= len(password) <= 32):
+       return False
+    elif not password[0].isalpha():
+       return False
+    elif any(char in '/\\=\'"' for char in password):
+       return False
+    elif ' ' in password:
+       return False
+    else:
+      return True
+
+input_string = input()
+
+print(is_valid_password(input_string), end="")
+</pre>
+        <button onclick="copyCode('code3')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+ 
+ 
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+
+<!-- w3a1 c4-->
+    <div class="code-container">
+        <h2>Week 3: Assignment 1</h2>
+        <pre id="code4">
+def solution(marks):
+    ### Enter your solution below this line
+    ### Indent your entire code by one unit (4 spaces) to the right
+    for i in range(1, len(marks)):
+        key = marks[i]
+        j = i - 1
+        while j >= 0 and key < marks[j]:
+            marks[j + 1] = marks[j]
+            j -= 1
+        marks[j + 1] = key
+    n=len(marks)
+    if (n%2)==1 :
+        median=marks[int(((n+1)/2)-1)]
+    else:
+        median=(marks[int((n/2)-1)]+marks[int((n/2))])/2
+### Enter your solution above this line
+    return median
+marks_input = input()
+
+# Extracting numeric values from the input string
+marks = [float(mark.strip()) for mark in marks_input.split(',') if mark.strip().isdigit()]
+
+
+result = solution(marks)
+print(result)
+</pre>
+        <button onclick="copyCode('code4')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w3a2 c5-->
+    <div class="code-container">
+        <h2>Week 3: Assignment 2</h2>
+        <pre id="code5">
+string = input("")
+lower_string=string.lower()
+sorted_string=''.join(sorted(lower_string))
+print(sorted_string , end="")
+</pre>
+        <button onclick="copyCode('code5')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w3a3 c6-->
+    <div class="code-container">
+        <h2>Week 3: Assignment 3</h2>
+        <pre id="code6">
+def parse_date(date_str):
+    day, month, year = map(int, date_str.split('-'))
+    return (day, month, year)
+
+name1 = input().strip().capitalize()
+dob1 = parse_date(input().strip())
+
+name2 = input().strip().capitalize()
+dob2 = parse_date(input().strip())
+
+if dob1[4:]>dob2[4:]:
+    print(name1 , end="")
+elif dob1[4:]==dob2[4:]:
+    if dob1[2:4]>dob2[2:4]:
+        print(name1 , end="")
+    elif dob1[2:4]==dob2[2:4]:
+        if dob1[:2]>dob2[:2]:
+            print(name1 , end="")
+        elif dob1[:2]==dob2[:2]:
+            sorted_name=sorted([name1,name2])
+            print(sorted_name[0] , end="")
+        else:
+            print(name2 , end="")
+    else:
+        print(name2 , end="")
+else:
+    print(name2 , end="")
+</pre>
+        <button onclick="copyCode('code6')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+    
+<!-- w4a1 c7-->
+    <div class="code-container">
+        <h2>Week 4: Assignment 1</h2>
+        <pre id="code7">
+# The question was removed from nptel website due to some unavoidable circumstances
+</pre>
+        <button onclick="copyCode('code7')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w4a2 c8-->
+    <div class="code-container">
+        <h2>Week 4: Assignment 2</h2>
+        <pre id="code8">
+def matrix_multiply(A, B):
+    n = len(A)
+    result = [[0] * n for _ in range(n)]
+    
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                result[i][j] += A[i][k] * B[k][j]
+    
+    return result
+
+def parse_input():
+    n = int(input())
+    A = [list(map(int, input().split(','))) for _ in range(n)]
+    B = [list(map(int, input().split(','))) for _ in range(n)]
+    return A, B
+
+def main():
+    A, B = parse_input()
+    result = matrix_multiply(A, B)
+    for row in result:
+        print(','.join(map(str, row)) )
+
+if __name__ == "__main__":
+    main()
+</pre>
+        <button onclick="copyCode('code8')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w4a3 c9-->
+    <div class="code-container">
+        <h2>Week 4: Assignment 3</h2>
+        <pre id="code9">
+def scalar_multiply(matrix, scalar):
+    result = []
+    for row in matrix:
+        result_row = [elem * scalar for elem in row]
+        result.append(result_row)
+    return result
+
+def parse_input():
+    n = int(input())
+    matrix = [list(map(int, input().split())) for _ in range(n)]
+    scalar = int(input())
+    return matrix, scalar
+
+def print_matrix(matrix):
+    for row in matrix:
+        print(*row)
+
+def main():
+    matrix, scalar = parse_input()
+    scaled_matrix = scalar_multiply(matrix, scalar)
+    print_matrix(scaled_matrix)
+
+if __name__ == "__main__":
+    main()
+</pre>
+        <button onclick="copyCode('code9')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+    
+<!-- w5a1 c10-->
+    <div class="code-container">
+        <h2>Week 5: Assignment 1</h2>
+        <pre id="code10">
+def insert(L, x):
+    """
+    insert an element x into a sorted list L
+
+    Arguments:
+        L: list
+        x: integers
+    Return:
+        sorted_L: list
+    """
+    result = L[:]  
+    for i in range(len(result)):
+        if result[i] >= x:
+            result.insert(i, x)
+            return result
+    result.append(x)  
+    return result
+</pre>
+        <button onclick="copyCode('code10')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w5a2 c11-->
+    <div class="code-container">
+        <h2>Week 5: Assignment 2</h2>
+        <pre id="code11">
+def create_real_dict(sequence):
+    real_dict = {}
+    words = sequence.split(",")
+    for word in words:
+        first_letter = word[0]
+        if first_letter not in real_dict:
+            real_dict[first_letter] = []
+        real_dict[first_letter].append(word)
+    return real_dict
+  
+sequence=str(input(""))
+real_dict = create_real_dict(sequence)
+</pre>
+        <button onclick="copyCode('code11')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w5a3 c12-->
+    <div class="code-container">
+        <h2>Week 5: Assignment 3</h2>
+        <pre id="code12">
+def final(n, moves):
+    """
+    Compute the final position
+    
+    Argument:
+        n: int
+        moves: string
+    Return:
+        (x, y): tuple
+    """
+    n=int(n)
+    moves=str(moves)
+    x=1
+    y=1
+    
+    for move in range(len(moves)):
+        if moves[move]=="N" and y<n:
+            y=y+1
+        elif moves[move]=="E" and x<n:
+            x=x+1
+        elif moves[move]=="W" and x>1:
+            x=x-1
+        elif moves[move]=="S" and y>1:
+            y=y-1
+    return (x,y)
+</pre>
+        <button onclick="copyCode('code12')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+    
+<!-- w6a1 c13-->
+    <div class="code-container">
+        <h2>Week 6: Assignment 1</h2>
+        <pre id="code13">
+def distance(word_1, word_2):   
+    """
+    calculate the distance between two words
+    Argument:
+        word1: str
+        word2: str
+    Return:
+        dist: int
+    """
+    alphabets=("abcdefghijklmnopqrstuvwxyz")
+    word_1=str(word_1)
+    word_2=str(word_2)
+    if len(word_1)==len(word_2):
+        distance=0
+        for i in range(0,len(word_1) or len(word_2)):
+            diff=alphabets.index(word_1[i])-alphabets.index(word_2[i])
+            if diff<0:
+                diff = (-diff)
+            distance=distance+diff
+        return distance
+    else:
+        return -1
+</pre>
+        <button onclick="copyCode('code13')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w6a2 c14-->
+    <div class="code-container">
+        <h2>Week 6: Assignment 2</h2>
+        <pre id="code14">
+def ancestry(P, present, past):
+    """
+    A recursive function to compute the sequence of ancestors of person
+
+    Arguments:
+        P: dict, key and value are strings
+        present: string
+        past: string
+    Return:
+        result: list of strings
+    """
+    if present==past:
+        return [present]
+    else:    
+        return [present]+ancestry(P,P[present],past)
+</pre>
+        <button onclick="copyCode('code14')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w6a3 c15-->
+    <div class="code-container">
+        <h2>Week 6: Assignment 3</h2>
+        <pre id="code15">
+def steps(n):
+    """
+    A recursive function to compute the number of ways to ascend steps 
+
+    Argument:
+        n: integer
+    Return:
+        result: integer
+    """
+    if n == 0:
+        return 1
+    elif n < 0:
+        return 0
+    else:
+        return steps(n-1) + steps(n-2) + steps(n-3)
+</pre>
+        <button onclick="copyCode('code15')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+    
+<!-- w7a1 c16-->
+    <div class="code-container">
+        <h2>Week 7: Assignment 1</h2>
+        <pre id="code16">
+Label_Number="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+Label=input(str())
+Number=0
+for i in range(1,len(Label)+1):
+    Value=int((Label_Number.index(Label[-i])+1)*((26)**(i-1)))
+    Number=Number+Value
+print(Number,end="")
+</pre>
+        <button onclick="copyCode('code16')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w7a2 c17-->
+    <div class="code-container">
+        <h2>Week 7: Assignment 2</h2>
+        <pre id="code17">
+output=[]
+i=0
+while(i<2):
+    input_operations = input()
+    separated_operations = input_operations.split(',')
+    if separated_operations[0]=="JOIN":
+        output.append(separated_operations[1])
+    elif separated_operations[0]=="LEAVE":
+        output.remove(output[0])
+    elif separated_operations[0]=="MOVE":
+        if separated_operations[2]=="HEAD":
+            output.remove(separated_operations[1])
+            output.insert(0,separated_operations[1])
+        elif separated_operations[2]=="TAIL":
+            output.remove(separated_operations[1])
+            output.insert(len(output),separated_operations[1])
+    elif separated_operations[0]=="PRINT":
+        print(",".join(output))
+    elif separated_operations[0]=="END":
+        break
+    i=i-1
+</pre>
+        <button onclick="copyCode('code17')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w7a3 c18-->
+    <div class="code-container">
+        <h2>Week 7: Assignment 3</h2>
+        <pre id="code18">
+Letters="abcdefghijklmnopqrstuvwxyz"
+original=input(str())
+word=original
+for i in range(len(original)):
+    if word[i]==original[i]:
+        if word[i] in word[:i]:
+        	a=word[:i]
+        	b=word[i:]
+        	b=b.replace(word[i],Letters[-Letters.index(word[i])-1])
+        	word=a+b
+        else:
+        	word=word.replace(word[i],Letters[-Letters.index(word[i])-1])
+    else:
+        word=word
+print(word,end="")
+</pre>
+        <button onclick="copyCode('code18')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+    
+<!-- w8a1 c19-->
+    <div class="code-container">
+        <h2>Week 8: Assignment 1</h2>
+        <pre id="code19">
+def create_points_table(matches):
+    points_table = {}
+    
+    for match in matches:
+        for team in match:
+            points_table[team] = 0
+
+    for match in matches:
+        winner = match[0]
+        for opponent in match[1:]:
+            points_table[winner] += 1
+
+    sorted_table = sorted(points_table.items(), key=lambda x: (-x[1], x[0]))
+    for team, points in sorted_table:
+        print(f"{team}:{points}")
+
+matches = [
+    input().split(',') for _ in range(8)
+]
+create_points_table(matches)
+</pre>
+        <button onclick="copyCode('code19')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w8a2 c20-->
+    <div class="code-container">
+        <h2>Week 8: Assignment 2</h2>
+        <pre id="code20">
+def minor_matrix(M, i, j):
+  """
+  This function calculates the minor matrix of a square matrix M 
+  by removing the i-th row and j-th column.
+
+  Args:
+      M: A square matrix represented as a list of lists.
+      i: A non-negative integer representing the row index.
+      j: A non-negative integer representing the column index.
+
+  Returns:
+      A new matrix (list of lists) representing the minor matrix of M.
+  """
+  M_ij = []
+  for row_index, row in enumerate(M):
+    if row_index != i:
+      new_row = []
+      for col_index, value in enumerate(row):
+        if col_index != j:
+          new_row.append(value)
+      M_ij.append(new_row)
+  return M_ij
+</pre>
+        <button onclick="copyCode('code20')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w8a3 c21-->
+    <div class="code-container">
+        <h2>Week 8: Assignment 3</h2>
+        <pre id="code21">
+def two_level_sort(scores):
+    n = len(scores)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if scores[j][1] > scores[j+1][1]:
+                scores[j], scores[j+1] = scores[j+1], scores[j]
+
+    for i in range(1, len(scores)):
+        key = scores[i]
+        j = i-1
+        while j >= 0 and key[1] == scores[j][1] and key[0] < scores[j][0]:
+            scores[j+1] = scores[j]
+            j -= 1
+        scores[j+1] = key
+
+    return scores
+</pre>
+        <button onclick="copyCode('code21')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+    
+<!-- w9a1 c22-->
+    <div class="code-container">
+        <h2>Week 9: Assignment 1</h2>
+        <pre id="code22">
+def balanced(word):
+  """
+  This function determines if a string containing parentheses is balanced.
+
+  Args:
+      word: A string containing parentheses.
+
+  Returns:
+      True if the string is balanced, False otherwise.
+  """
+  stack = []
+  for char in word:
+    if char in ("[", "{", "("):
+      stack.append(char)
+    elif char in ("]", "}", ")"):
+      if not stack:
+        return False
+      top = stack.pop()
+      if not matches(top, char):
+        return False
+  return not stack
+
+def matches(opening, closing):
+  """
+  This function determines if an opening parenthesis matches a closing parenthesis
+
+  Args:
+      opening: The opening parenthesis
+
+      closing: The closing parenthesis
+
+  Returns:
+      True if the parentheses match, False otherwise
+  """
+  return (opening == "(" and closing == ")") or (opening == "{" and closing == "}") or (opening == "[" and closing == "]")
+</pre>
+        <button onclick="copyCode('code22')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w9a2 c23-->
+    <div class="code-container">
+        <h2>Week 9: Assignment 2</h2>
+        <pre id="code23">
+def depth(expr):
+  """
+  This function calculates the maximum nesting depth in a balanced expression.
+
+  Args:
+      expr: A balanced expression string containing only flower brackets "()".
+
+  Returns:
+      The maximum nesting depth in the expression.
+  """
+  max_depth = 0
+  current_depth = 0
+  for ch in expr:
+    if ch == '(':
+      current_depth += 1
+      max_depth = max(max_depth, current_depth)
+    elif ch == ')':
+      if current_depth == 0:
+        return -1
+      current_depth -= 1
+  return max_depth if current_depth == 0 else -1
+</pre>
+        <button onclick="copyCode('code23')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w9a3 c24-->
+    <div class="code-container">
+        <h2>Week 9: Assignment 3</h2>
+        <pre id="code24">
+def power(A, m):
+  """
+  This function computes the power of a square matrix A raised to a positive integer m using recursion.
+
+  Args:
+      A: A square matrix.
+      m: A positive integer representing the power.
+
+  Returns:
+      A raised to the power m.
+  """
+  if m == 0:
+    return [[1 if i == j else 0 for j in range(len(A))] for i in range(len(A))]
+  elif m == 1:
+    return A
+  else:
+    return matrix_multiply(power(A, m-1), A)
+
+def matrix_multiply(A, B):
+  """
+  This function multiplies two matrices A and B.
+
+  Args:
+      A: The first matrix.
+      B: The second matrix.
+
+  Returns:
+      The product of A and B.
+  """
+  result = [[0 for _ in range(len(B[0]))] for _ in range(len(A))]
+  for i in range(len(A)):
+    for j in range(len(B[0])):
+      for k in range(len(B)):
+        result[i][j] += A[i][k] * B[k][j]
+  return result
+
+</pre>
+        <button onclick="copyCode('code24')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+    
+<!-- w10a1 c25-->
+    <div class="code-container">
+        <h2>Week 10: Assignment 1</h2>
+        <pre id="code25">
+def rotate(mat):
+    """
+    Rotate a matrix 90 degrees clockwise.
+
+    Argument:
+    mat: list of lists
+    Return:
+    rotated_mat: list of lists
+    """
+    rotated_mat = []
+    n_rows = len(mat)
+    n_cols = len(mat[0])
+    for j in range(n_cols):
+        new_row = []
+        for i in range(n_rows-1, -1, -1):
+            new_row.append(mat[i][j])
+        rotated_mat.append(new_row)
+
+    return rotated_mat
+</pre>
+        <button onclick="copyCode('code25')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w10a2 c26-->
+    <div class="code-container">
+        <h2>Week 10: Assignment 2</h2>
+        <pre id="code26">
+
+</pre>
+        <button onclick="copyCode('code26')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w10a3 c27-->
+    <div class="code-container">
+        <h2>Week 10: Assignment 3</h2>
+        <pre id="code27">
+
+</pre>
+        <button onclick="copyCode('code27')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+    
+<!-- w11a1 c28-->
+    <div class="code-container">
+        <h2>Week 11: Assignment 1</h2>
+        <pre id="code28">
+
+</pre>
+        <button onclick="copyCode('code28')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w11a2 c29-->
+    <div class="code-container">
+        <h2>Week 11: Assignment 2</h2>
+        <pre id="code29">
+
+</pre>
+        <button onclick="copyCode('code29')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w11a3 c30-->
+    <div class="code-container">
+        <h2>Week 11: Assignment 3</h2>
+        <pre id="code30">
+
+</pre>
+        <button onclick="copyCode('code30')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+    
+<!-- w12a1 c31-->
+    <div class="code-container">
+        <h2>Week 12: Assignment 1</h2>
+        <pre id="code31">
+
+</pre>
+        <button onclick="copyCode('code31')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w12a2 c32-->
+    <div class="code-container">
+        <h2>Week 12: Assignment 2</h2>
+        <pre id="code32">
+
+</pre>
+        <button onclick="copyCode('code32')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+
+    
+<!-- w12a3 c33-->
+    <div class="code-container">
+        <h2>Week 12: Assignment 3</h2>
+        <pre id="code33">
+
+</pre>
+        <button onclick="copyCode('code33')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
+    </div>
+
+    <h1 class="decorative-heading">The Joy of Computing using Python 2024</h1>
+    <h1 class="decorative-heading">All codes are written by Amitava Datta</h1>
+    <h1 class="decorative-heading">The web page is designed by Amitava Datta</h1>
+
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

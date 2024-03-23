@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 20px;
+    background-color: #72b0c1;
+    /* Change background color */
+    /* background-image: url("https://i.natgeofe.com/n/2a832501-483e-422f-985c-0e93757b7d84/6_4x3.jpg?w=1436&h=1078"); */
+    /* Replace with your image path */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+h1.decorative-heading {
+    font-family: 'Dancing Script', cursive;
+    color: #000000;
+    border-bottom: 2px solid #ae0000;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    /* Center align text */
+}
+
+h2 {
+    color: #000000;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.code-container {
+    margin-bottom: 40px;
+    /* Increase spacing between code snippets */
+    background-color: #dd83d6;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+pre {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 2px solid #200154;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    /* Adjust width as needed to fit your content */
+    max-width: 100%;
+}
+
+button {
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff8a04;
+}
+
+.copy-icon {
+    margin-right: 5px;
+}
