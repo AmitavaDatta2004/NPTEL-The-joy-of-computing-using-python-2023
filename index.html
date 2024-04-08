@@ -950,7 +950,19 @@ def f(x, y):
     <div class="code-container">
         <h2>Week 12: Assignment 3</h2>
         <pre id="code33">
-
+def std_dev(X):
+    """
+    Compute the standard deviation
+    
+    Argument:
+        X: list of integers
+    Return:
+        sigma: float
+    """
+    n = len(X)
+    X_mean = sum(X) / n
+    variance = sum((x - X_mean)**2 for x in X) / (n - 1)
+    return variance**0.5
 </pre>
         <button onclick="copyCode('code33')"><i class="fas fa-copy copy-icon"></i> Copy Code</button>
     </div>
